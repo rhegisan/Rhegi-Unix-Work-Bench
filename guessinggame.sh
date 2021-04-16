@@ -1,6 +1,10 @@
+#!/usr/bin/env bash
+
+
 echo "GUESSING GAME"
 echo "Enter guess:"
 read guess
+
 
 function get_file {
 	local num=$(ls -l | wc -l)-1
@@ -8,6 +12,7 @@ function get_file {
 }
 
 correct=$(get_file)
+
 
 while [[ $guess -ne $correct ]]
 do
@@ -21,5 +26,6 @@ do
 	echo "Try"
 	read guess
 done
+
 
 echo "You guessed the right number"
